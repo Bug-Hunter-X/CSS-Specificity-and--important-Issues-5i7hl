@@ -1,0 +1,19 @@
+The CSS specificity can be a source of unexpected behavior.  For example, consider the following:
+
+```css
+div {
+  color: blue;
+}
+
+.special {
+  color: red;
+}
+
+.special div {
+  color: green; /* This will override the other styles due to higher specificity */
+}
+```
+
+In this case, even though the `div` selector is more general, the `.special div` selector has higher specificity because it is more specific.
+
+Another issue is using `!important` excessively, which overrides any other styles, making it hard to maintain and debug.
